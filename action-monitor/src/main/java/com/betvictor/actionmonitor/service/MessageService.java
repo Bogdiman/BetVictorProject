@@ -15,7 +15,7 @@ public class MessageService {
     private MessageValidator validator;
 
     public Message postMessage(MessageDTO msg) throws Exception {
-        validator.validateMessageHasSender(msg);
+        validator.validateMessage(msg);
 
         return messageRepository.save(Message.builder()
                 .messageId(msg.getMessageId())
