@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class MessageValidator {
 
     public void validateMessageHasSender(MessageDTO msg) throws Exception {
-        if (msg.getSenderUsername().isEmpty()) {
+        if (StringUtils.isBlank(msg.getSenderUsername())) {
             throw new Exception("Msg sender cannot be empty!");
         }
     }
